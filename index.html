@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+      <title>Dining Menu</title>
+   </head>
+   <style>
+      .active{background-color: #DB1A1F !important;color: aliceblue !important;}
+   </style>
+   <body>
+      <section>
+         <div class="container">
+            <div class="row">
+               <div class="col-md-6">
+                <h5>OUR CUISINES</h5>
+                <h3>Dining</h3>
+                  <div class="tab">
+                     <button class="tablinks btn btn-light" id="defaultOpen" onclick="openTab(event, 'northIndian', 'https://www.mygovindas.com/assets/frontend/images/home_new/North-Indian_Home_page.jpg')">NORTH INDIAN</button>
+                     <button class="tablinks btn btn-light" onclick="openTab(event, 'southIndian','https://www.mygovindas.com/assets/frontend/images/home_new/South_Indian_home_page.jpg')">SOUTH INDIAN</button>
+                     <button class="tablinks btn btn-light" onclick="openTab(event, 'tandoorSe','')">TANDOOR SE</button>
+                     <button class="tablinks btn btn-light" onclick="openTab(event, 'chinese','')">CHINESE</button>
+                     <button class="tablinks btn btn-light" onclick="openTab(event, 'continental','')">CONTINENTAL</button>
+                     <button class="tablinks btn btn-light" onclick="openTab(event, 'salads','')">SALADS</button>
+                     <button class="tablinks btn btn-light" onclick="openTab(event, 'seasonSpecial','')">SEASON SPECIAL</button>
+                  </div>
+                  <div class="tab-content">
+                     <div id="northIndian" class="tabcontent">
+                        <h3>North Indian Menu</h3>
+                        <p>Standing atop among the bona fide North Indian vegetarian restaurants in Dubai, we bring forth an authentic experience for you to enrich in. With a traditional touch of Desi flavors and aroma along with a touch of innovation, you will be left with tasteful memories in your mouth.
+                           <br>
+                           From Makai Palak to Paneer Malai Handi, we make sure we leave no stone unturned in ensuring all your favorite dishes are available for you to explore in our pure vegetarian restaurant in Dubai..
+                        </p>
+                     </div>
+                     <div id="southIndian" class="tabcontent">
+                        <h3>South Indian Menu</h3>
+                        <p>When you are looking for the best South Indian vegetarian restaurants in Dubai, you will be up for a pleasant surprise like no other when you visit us. Our menu will fill you up with a culinary experience that will surely take you to the lanes of southern India.
+                           <br>
+                           Known for their healthy balance of food and undisputed commitment to rich flavors, you will be treated to the delights of Vada Sambar, Idli Sambar, Paper Masala Dosa, Tomato Uttapam, and everything in between.
+                        </p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <div class="tab-img" id="tab-img">
+                     <img src="" class="img-fluid" alt="Menu Image">
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <script>
+         function openTab(evt, tabName, imgSrc) {
+             var i, tabcontent, tablinks;
+             tabcontent = document.getElementsByClassName("tabcontent");
+             for (i = 0; i < tabcontent.length; i++) {
+                 tabcontent[i].style.display = "none";
+             }
+             tablinks = document.getElementsByClassName("tablinks");
+             for (i = 0; i < tablinks.length; i++) {
+                 tablinks[i].classList.remove("active");
+             }
+             document.getElementById(tabName).style.display = "block";
+             evt.currentTarget.classList.add("active");
+             document.getElementById("tab-img").innerHTML = '<img src="' + imgSrc + '" class="img-fluid" alt="Menu Image" />';
+         }
+        
+         document.getElementById("defaultOpen").click();
+      </script>
+   </body>
+</html>
